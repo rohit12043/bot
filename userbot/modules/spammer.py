@@ -1,4 +1,3 @@
-👑≛ Âթ ζ ⋡ Ł👑:
 from asyncio import wait
 
 from userbot import LOGGER_GROUP, LOGGER, HELPER
