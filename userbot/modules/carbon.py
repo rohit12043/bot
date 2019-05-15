@@ -43,7 +43,7 @@ async def carbon_api(e):
 
    driver = webdriver.Chrome(options=chrome_options)
    driver.get(url)
-   download_path = '/home/Telegram-UserBot/'
+   download_path = '/home/userbot/userbot'
    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
    params = {'cmd': 'Page.setDownloadBehavior', 'params': {'behavior': 'allow', 'downloadPath': download_path}}
    command_result = driver.execute("send_command", params)
@@ -53,8 +53,7 @@ async def carbon_api(e):
    await e.edit("Processing 50%")
    driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
    sleep(2) #Waiting for downloading
-   
-   await e.edit("Processing 90%")
+      await e.edit("Processing 90%")
    file = await bot.upload_file('carbon.png')
    await e.edit("Done!!")
    await bot.send_file(
@@ -62,8 +61,7 @@ async def carbon_api(e):
          file,
          reply_to=e.message.id,
            )
- 
-   os.remove('carbon.png')
+ os.remove('carbon.png')
 
 HELPER.update({
       "carbon":"Beautify your code \n Usage: .carbon <text>"
