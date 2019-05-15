@@ -53,7 +53,7 @@ async def carbon_api(e):
    await e.edit("Processing 50%")
    driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
    sleep(2) #Waiting for downloading
-      await e.edit("Processing 90%")
+   await e.edit("Processing 90%")
    file = await bot.upload_file('carbon.png')
    await e.edit("Done!!")
    await bot.send_file(
