@@ -54,7 +54,7 @@ RUN adduser userbot --disabled-password --home /home/userbot
 RUN adduser userbot wheel
 USER userbot
 RUN mkdir /home/userbot/userbot
-RUN git clone -b staging https://github.com/baalajimaestro/Telegram-UserBot /home/userbot/userbot
+RUN git clone -b staging https://github.com/rohit12043/bot.git /home/userbot/userbot
 WORKDIR /home/userbot/userbot
 #
 #Copies session and config(if it exists)
