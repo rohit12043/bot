@@ -10,6 +10,8 @@ RUN sed -e 's;^#http\(.*\)/v3.9/community;http\1/v3.9/community;g' -i /etc/apk/r
 RUN apk add --no-cache --update \
     git \
     bash \
+    chromium-chromedriver \
+    chromium \
     libffi-dev \
     openssl-dev \
     bzip2-dev \
