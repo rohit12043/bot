@@ -297,21 +297,25 @@ async def yt_search(video_q):
 
         await video_q.edit(reply_text)
 
-
-def youtube_search(  
+def youtube_search(
         query,
         order="relevance",
         token=None,
         location=None,
         location_radius=None
     ):
-
-
     """ Do a YouTube search. """
-    youtube = build('youtube', 'v3',
-                    developerKey=YOUTUBE_API_KEY, cache_discovery=False)
+    youtube = build('youtube', 'v3', developerKey=YOUTUBE_API_KEY, cache_discovery=False)
     search_response = youtube.search().list(
-        
+        q=query,
+        type="video",
+        pageToken=token,
+        order=order,
+        part="id,snippet",
+        maxResults=10,
+        location=location,
+        locationRadius=location_radius
+    ).execute()
 
     videos = []
 
