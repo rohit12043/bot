@@ -298,13 +298,14 @@ async def yt_search(video_q):
         await video_q.edit(reply_text)
 
 
-def youtube_search(
-query,
+def youtube_search(  
+        query,
         order="relevance",
         token=None,
         location=None,
         location_radius=None
     ):
+
 
     """ Do a YouTube search. """
     youtube = build('youtube', 'v3',
